@@ -12,7 +12,9 @@ When the user quits print a win/loss record
 '''
 import random
 q="n"
-while q=="n":
+cWins=0
+pWins=0
+while q!="y":
     plyr = int(input("Chose rock, paper, or scissors! 1 for scissors, 2 for rock, 3 for paper"))
     if plyr == 1:
         print("Plyr: Scissors!")
@@ -33,20 +35,27 @@ while q=="n":
         print("Tie game!")
     elif i==1 and plyr==2:
         print("You win!")
+        pWins+=1
     elif i == 2 and plyr == 1:
         print("Computer wins!")
+        cWins += 1
     elif i == 2 and plyr == 3:
         print("You win!")
+        pWins += 1
     elif i == 3 and plyr == 2:
         print("Computer wins!")
+        cWins += 1
     elif i == 3 and plyr == 1:
         print("You win!")
+        pWins += 1
     elif i == 1 and plyr == 3:
         print("Computer wins!")
-
+        cWins += 1
     q = str(input("Do you wish to quit?"))
     if q=="y":
         print("goodbye")
+        print("Computer score: ", cWins ,
+              " Player score: ", pWins)
     else:
         print("Ok! Lets keep playing!")
 
