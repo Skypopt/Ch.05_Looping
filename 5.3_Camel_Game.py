@@ -13,13 +13,17 @@ print("2. Make sure to properly manage your thirst,")
 print("and make sure your caramel isn't tired")
 print("3. Don't get caught by the witch!!!")
 done = False
+wolfAcc=0
+wolfDef=0
 mtrav = 0
 thr = 0
 cTir = 0
 nDis = -20
 cDrk = 8
 tTak = 0
+#wolfAtk = random.randrange(0, 21)
 while not done:
+    wolfAtk = random.randrange(0, 21)
     oasis = random.randrange(0, 51)
     print(" ")
     print("A.Drink from your jelly bottle.")
@@ -46,7 +50,7 @@ while not done:
         print("Your caramel is greatful for the break! :)")
         print(" ")
         tTak += 1
-        dAdd=random.randrange(12,16)
+        dAdd=random.randrange(10,14)
         nDis=nDis+dAdd
     elif pIn.upper() == "C":
         dAdd = random.randrange(10, 21)
@@ -55,7 +59,7 @@ while not done:
         thr+=1
         dAdd = random.randrange(2, 4)
         cTir+=dAdd
-        dAdd = random.randrange(12, 16)
+        dAdd = random.randrange(7, 14)
         nDis+=dAdd
         tTak += 1
         print("FULL SPEED AHEAD!!!")
@@ -67,7 +71,7 @@ while not done:
         nDis-=dAdd
         thr+=1
         cTir+=2
-        dAdd = random.randrange(12, 16)
+        dAdd = random.randrange(7, 14)
         nDis+=dAdd
         tTak += 1
         print("Get moving!")
@@ -123,11 +127,44 @@ while not done:
         done = True
 
 
-    elif oasis==5:
+    if oasis==5:
         print("YOU FOUND A JELLY BEAN FARM!")
         cTir=0
         thr=0
         cDrk=8
+    while wolfAtk==7 and not done:
+    #if wolfAtk==7 and not done:
+        print("You've been attacked by wolves during your travels")
+        print("F: Defend yourself")
+        print("G: Run")
+        print("H: Accept fate")
+        wolfResp = str(input("What will do you?: "))
+        if wolfResp.upper()=="F":
+            wolfDef = random.randrange(1,5)
+            if wolfDef == 1:
+                print("You failed to defend yourself and died :(")
+                done = True
+            elif wolfDef!=1:
+                print("You fought the wolf off but lost half of your jelly")
+                print(" ")
+                cDrk=cDrk/2
+                break
+        elif wolfResp.upper()=="G":
+            print("Silly goose, you're not faster than a wolf")
+            done = True
+        elif wolfResp.upper()=="H":
+            wolfAcc = random.randrange(1,11)
+            if wolfAcc == 1:
+                print("The wolf ate you, could've fought back :(")
+                done = True
+            elif wolfAcc!=1:
+                print("The wolf took pity on you and left")
+                print(" ")
+                break
+            else:
+                print("That is not an option")
+
+
 
 
 
