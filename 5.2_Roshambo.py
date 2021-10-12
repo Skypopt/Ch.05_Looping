@@ -14,17 +14,24 @@ import random
 q="n"
 cWins=0
 pWins=0
+print("Welcome to Roshambo!")
+print("Press 1 for scissors, 2 for rock, and 3 for paper")
+print("When asked to quit, press n for no, and y for yes")
 while q!="y":
-    plyr = int(input("Chose rock, paper, or scissors! 1 for scissors, 2 for rock, 3 for paper"))
+    plyr = int(input("Chose rock, paper, or scissors!"))
     if plyr == 1:
         print("Plyr: Scissors!")
     elif plyr == 2:
         print("Plyr: Rock!")
     elif plyr == 3:
         print("Plyr: Paper!")
+    elif plyr == 4:
+        q="y"
+        break
+
 
     i=random.randrange(1,4)
-    if i==1:
+    if i==1 and q!="y":
         print("Comp: Scissors!")
     elif i==2:
         print("Comp: Rock!")
@@ -51,14 +58,10 @@ while q!="y":
     elif i == 1 and plyr == 3:
         print("Computer wins!")
         cWins += 1
-    q = str(input("Do you wish to quit?"))
-    if q=="y":
-        print("goodbye")
-        print("Computer score: ", cWins ,
-              " Player score: ", pWins)
-    else:
-        print("Ok! Lets keep playing!")
 
+
+print("goodbye")
+print("Computer score: ", cWins," Player score: ", pWins)
 
 
 

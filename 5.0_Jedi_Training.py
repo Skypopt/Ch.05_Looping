@@ -14,9 +14,11 @@ print("The total is:", total)
 
 
 
-  #2. print numbers from 2 to 100, inclusive.
+  #2. print even numbers from 2 to 100, inclusive.
 for i in range(2,101):
-    print(i)
+    if i%2==0:
+        print(i)
+
 
 
 
@@ -29,7 +31,7 @@ for i in range(2,101):
      a WHILE loop, don't use a FOR loop.
 '''
 i=10
-while i<=10 and i>=0:
+while i>=0:
     print(i)
     i=i-1
 print("Blast off!")
