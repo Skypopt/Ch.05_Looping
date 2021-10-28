@@ -183,7 +183,7 @@ while not done:
     if not done and nDis<=15: #and not cTir>=8 and not thr>=6 and not nDis>=0: #witch
         print("The witch is getting close")
         print(" ")
-    elif nDis>=0:
+    elif nDis<=0:
         print("The witch caught and ate you")
         done = True
     if not done and hung>=8: #and not cTir>=8 and not thr>=6 and not nDis>=0 and not nDis>=-15
